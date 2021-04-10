@@ -4,8 +4,8 @@ program main
 
   ! Allocate resources
   real :: s, rTime, endTime
-  real, dimension(n, n) :: A
-  real, dimension(n) :: x, b
+  real*8, dimension(n, n) :: A
+  real*8, dimension(n) :: x, b
   integer :: values(8)
 
   ! Initialize A and x with random values
