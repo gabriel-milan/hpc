@@ -3,7 +3,7 @@ program main
   integer, parameter :: n=33000
 
   ! Allocate resources
-  real :: s, rTime, endTime
+  real*8 :: s, rTime, endTime
   real*8, dimension(n, n) :: A
   real*8, dimension(n) :: x, b
   integer :: values(8)
