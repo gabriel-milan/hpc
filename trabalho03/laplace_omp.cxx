@@ -102,14 +102,19 @@ void LaplaceSolver ::initialize()
 }
 Real LaplaceSolver ::timeStep(const Real dt)
 {
+  int i, j;
   Real tmp;
   Real err = 0.0;
   int nx = g->nx;
   int ny = g->ny;
   Real **u = g->u;
-  for (int i = 1; i < nx - 1; ++i)
+  // Red-black ordering
+  // Red sweep (part 1)
+#pragma omp parallel for private(tmp, i, j) shared(u, dx2, dy2) reduction(+ \
+                                                                          : err)
+  for (i = 1; i < nx - 1; i += 2)
   {
-    for (int j = 1; j < ny - 1; ++j)
+    for (j = 1; j < ny - 1; j += 2)
     {
       tmp = u[i][j];
       u[i][j] = ((u[i - 1][j] + u[i + 1][j]) * dy2 +
@@ -118,6 +123,49 @@ Real LaplaceSolver ::timeStep(const Real dt)
       err += (u[i][j] - tmp) * (u[i][j] - tmp);
     }
   }
+#pragma omp parallel for private(tmp, i, j) shared(u, dx2, dy2) reduction(+ \
+                                                                          : err)
+  // Red sweep (part 2)
+  for (i = 2; i < nx - 1; i += 2)
+  {
+    for (j = 2; j < ny - 1; j += 2)
+    {
+      tmp = u[i][j];
+      u[i][j] = ((u[i - 1][j] + u[i + 1][j]) * dy2 +
+                 (u[i][j - 1] + u[i][j + 1]) * dx2) *
+                mul_cte;
+      err += (u[i][j] - tmp) * (u[i][j] - tmp);
+    }
+  }
+#pragma omp parallel for private(tmp, i, j) shared(u, dx2, dy2) reduction(+ \
+                                                                          : err)
+  // Black sweep (part 1)
+  for (i = 1; i < nx - 1; i += 2)
+  {
+    for (j = 2; j < ny - 1; j += 2)
+    {
+      tmp = u[i][j];
+      u[i][j] = ((u[i - 1][j] + u[i + 1][j]) * dy2 +
+                 (u[i][j - 1] + u[i][j + 1]) * dx2) *
+                mul_cte;
+      err += (u[i][j] - tmp) * (u[i][j] - tmp);
+    }
+  }
+#pragma omp parallel for private(tmp, i, j) shared(u, dx2, dy2) reduction(+ \
+                                                                          : err)
+  // Black sweep (part 2)
+  for (i = 2; i < nx - 1; i += 2)
+  {
+    for (j = 1; j < ny - 1; j += 2)
+    {
+      tmp = u[i][j];
+      u[i][j] = ((u[i - 1][j] + u[i + 1][j]) * dy2 +
+                 (u[i][j - 1] + u[i][j + 1]) * dx2) *
+                mul_cte;
+      err += (u[i][j] - tmp) * (u[i][j] - tmp);
+    }
+  }
+
   return sqrt(err);
 }
 Real LaplaceSolver ::solve(const int n_iter, const Real eps)
@@ -161,6 +209,6 @@ int main(int argc, char *argv[])
   t_start = omp_get_wtime();
   result = s.solve(n_iter, eps);
   t_end = omp_get_wtime();
-  std::cout << result << "," << nx << "," << t_end - t_start << "," << nthreads << std::endl;
+  std::cout << result << "," << nx << "," << n_iter << "," << t_end - t_start << "," << nthreads << std::endl;
   return 0;
 }

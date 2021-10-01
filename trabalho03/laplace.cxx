@@ -108,9 +108,47 @@ Real LaplaceSolver ::timeStep(const Real dt)
   int nx = g->nx;
   int ny = g->ny;
   Real **u = g->u;
-  for (int i = 1; i < nx - 1; ++i)
+  // Red-black ordering
+  // Red sweep (part 1)
+  for (int i = 1; i < nx - 1; i += 2)
   {
-    for (int j = 1; j < ny - 1; ++j)
+    for (int j = 1; j < ny - 1; j += 2)
+    {
+      tmp = u[i][j];
+      u[i][j] = ((u[i - 1][j] + u[i + 1][j]) * dy2 +
+                 (u[i][j - 1] + u[i][j + 1]) * dx2) *
+                mul_cte;
+      err += (u[i][j] - tmp) * (u[i][j] - tmp);
+    }
+  }
+  // Red sweep (part 2)
+  for (int i = 2; i < nx - 1; i += 2)
+  {
+    for (int j = 2; j < ny - 1; j += 2)
+    {
+      tmp = u[i][j];
+      u[i][j] = ((u[i - 1][j] + u[i + 1][j]) * dy2 +
+                 (u[i][j - 1] + u[i][j + 1]) * dx2) *
+                mul_cte;
+      err += (u[i][j] - tmp) * (u[i][j] - tmp);
+    }
+  }
+  // Black sweep (part 1)
+  for (int i = 1; i < nx - 1; i += 2)
+  {
+    for (int j = 2; j < ny - 1; j += 2)
+    {
+      tmp = u[i][j];
+      u[i][j] = ((u[i - 1][j] + u[i + 1][j]) * dy2 +
+                 (u[i][j - 1] + u[i][j + 1]) * dx2) *
+                mul_cte;
+      err += (u[i][j] - tmp) * (u[i][j] - tmp);
+    }
+  }
+  // Black sweep (part 2)
+  for (int i = 2; i < nx - 1; i += 2)
+  {
+    for (int j = 1; j < ny - 1; j += 2)
     {
       tmp = u[i][j];
       u[i][j] = ((u[i - 1][j] + u[i + 1][j]) * dy2 +
@@ -147,18 +185,16 @@ int main(int argc, char *argv[])
   int nx, n_iter;
   Real eps;
   Real t_start, t_end;
+  Real result;
   nx = atoi(argv[1]);
   n_iter = atoi(argv[2]);
   eps = atof(argv[3]);
   Grid *g = new Grid(nx, nx);
   g->setBCFunc(BC);
   LaplaceSolver s = LaplaceSolver(g);
-  std::cout << "nx = " << g->nx << ", ny = " << g->ny
-            << ", n_iter = " << n_iter << ", eps = " << eps
-            << std::endl;
   t_start = seconds();
-  std::cout << s.solve(n_iter, eps) << std::endl;
+  result = s.solve(n_iter, eps);
   t_end = seconds();
-  std::cout << "Iterations took " << t_end - t_start << "seconds.\n ";
+  std::cout << result << "," << nx << "," << n_iter << "," << t_end - t_start << "," << 0 << std::endl;
   return 0;
 }

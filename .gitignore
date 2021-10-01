@@ -32,3 +32,5 @@
 *.app
 
 .vscode/
+trabalho03/laplace
+trabalho03/laplace_omp
