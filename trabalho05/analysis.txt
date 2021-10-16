@@ -1,0 +1,583 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 89.17     29.56    29.56                             dgemm_kernel
+  4.04     30.90     1.34                             dgemm_itcopy
+  0.92     31.21     0.31 84123104     0.00     0.00  HPL_lmul
+  0.84     31.49     0.28                             HPL_dlaswp01T
+  0.78     31.75     0.26                             HPL_dlaswp06T
+  0.57     31.94     0.19                             dtrsm_kernel_RN
+  0.48     32.10     0.16 41620560     0.00     0.00  HPL_rand
+  0.48     32.26     0.16                             blas_thread_server
+  0.47     32.41     0.16 84036672     0.00     0.00  HPL_ladd
+  0.42     32.55     0.14                             dgemv_n
+  0.39     32.68     0.13                             dgemm_otcopy
+  0.27     32.77     0.09 83942062     0.00     0.00  HPL_setran
+  0.24     32.85     0.08        5    16.00    16.00  HPL_pdlange
+  0.18     32.91     0.06    10650     0.01     0.01  HPL_dlatcpy
+  0.15     32.96     0.05      202     0.25     0.25  HPL_dlaswp10N
+  0.12     33.00     0.04        2    20.00   385.01  HPL_pdmatgen
+  0.09     33.03     0.03                             inner_thread
+  0.06     33.05     0.02   354972     0.00     0.00  HPL_jumpit
+  0.06     33.07     0.02     4032     0.00     0.00  HPL_dlocswpT
+  0.06     33.09     0.02                             dtrsm_ounucopy
+  0.03     33.10     0.01      173     0.06     0.06  HPL_pdpanel_init
+  0.03     33.11     0.01                             HPL_equil
+  0.03     33.12     0.01                             cblas_dscal
+  0.03     33.13     0.01                             daxpy_kernel_8
+  0.03     33.14     0.01                             dgemm_beta
+  0.03     33.15     0.01                             dscal_kernel_8
+  0.00     33.15     0.00   526203     0.00     0.00  HPL_bcast
+  0.00     33.15     0.00   526168     0.00     0.00  HPL_bcast_1rinM
+  0.00     33.15     0.00     8064     0.00     0.00  HPL_sdrv
+  0.00     33.15     0.00     4032     0.00     0.00  HPL_dlocmax
+  0.00     33.15     0.00     4032     0.00     0.00  HPL_pdmxswp
+  0.00     33.15     0.00     1824     0.00     0.00  HPL_spreadT
+  0.00     33.15     0.00     1008     0.00     0.02  HPL_pdpanrlT
+  0.00     33.15     0.00      893     0.00     0.00  HPL_numrocI
+  0.00     33.15     0.00      533     0.00     0.00  HPL_logsort
+  0.00     33.15     0.00      533     0.00     0.00  HPL_plindx10
+  0.00     33.15     0.00      500     0.00     0.00  HPL_perm
+  0.00     33.15     0.00      342     0.00     0.00  HPL_infog2l
+  0.00     33.15     0.00      340     0.00     0.00  HPL_packL
+  0.00     33.15     0.00      237     0.00     0.45  HPL_pdupdateTT
+  0.00     33.15     0.00      203     0.00     0.00  HPL_bwait
+  0.00     33.15     0.00      203     0.00     0.00  HPL_bwait_1rinM
+  0.00     33.15     0.00      202     0.00     0.00  HPL_pdlaswp01T
+  0.00     33.15     0.00      175     0.00     0.00  HPL_pdpanel_free
+  0.00     33.15     0.00      170     0.00     0.00  HPL_binit
+  0.00     33.15     0.00      170     0.00     0.00  HPL_binit_1rinM
+  0.00     33.15     0.00      167     0.00     0.00  HPL_pipid
+  0.00     33.15     0.00      102     0.00     0.22  HPL_pdrpanrlT
+  0.00     33.15     0.00       60     0.00     0.00  HPL_recv
+  0.00     33.15     0.00       60     0.00     0.00  HPL_send
+  0.00     33.15     0.00       35     0.00     0.66  HPL_pdfact
+  0.00     33.15     0.00       17     0.00     0.00  HPL_reduce
+  0.00     33.15     0.00       14     0.00     0.00  HPL_broadcast
+  0.00     33.15     0.00       14     0.00     0.06  HPL_xjumpm
+  0.00     33.15     0.00       13     0.00     0.00  HPL_sum
+  0.00     33.15     0.00       10     0.00     0.00  HPL_max
+  0.00     33.15     0.00        9     0.00     0.00  HPL_grid_info
+  0.00     33.15     0.00        4     0.00     0.00  HPL_all_reduce
+  0.00     33.15     0.00        3     0.00     0.00  HPL_indxg2p
+  0.00     33.15     0.00        3     0.00     0.00  HPL_numroc
+  0.00     33.15     0.00        3     0.00     0.00  HPL_ptimer_walltime
+  0.00     33.15     0.00        2     0.00     0.00  HPL_pdlaswp00T
+  0.00     33.15     0.00        2     0.00     0.00  HPL_pdpanel_disp
+  0.00     33.15     0.00        2     0.00     0.12  HPL_pdpanel_new
+  0.00     33.15     0.00        2     0.00     0.00  HPL_ptimer
+  0.00     33.15     0.00        2     0.00     0.00  HPL_ptimer_cputime
+  0.00     33.15     0.00        1     0.00     0.00  HPL_barrier
+  0.00     33.15     0.00        1     0.00     0.00  HPL_dlaswp02N
+  0.00     33.15     0.00        1     0.00   140.00  HPL_pdgesv
+  0.00     33.15     0.00        1     0.00   140.00  HPL_pdgesvK2
+  0.00     33.15     0.00        1     0.00     0.00  HPL_pdlamch
+  0.00     33.15     0.00        1     0.00     0.00  HPL_pdtrsv
+  0.00     33.15     0.00        1     0.00     0.00  HPL_ptimer_boot
+  0.00     33.15     0.00        1     0.00     0.00  HPL_ptimer_combine
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.03% of 33.15 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     89.2   29.56    0.00                 dgemm_kernel [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]      4.0    1.34    0.00                 dgemm_itcopy [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]      3.0    0.00    0.99                 HPL_pdtest [3]
+                0.04    0.73       2/2           HPL_pdmatgen [4]
+                0.00    0.14       1/1           HPL_pdgesv [13]
+                0.08    0.00       5/5           HPL_pdlange [18]
+                0.00    0.00       3/3           HPL_indxg2p [63]
+                0.00    0.00       2/3           HPL_numroc [64]
+                0.00    0.00       2/14          HPL_broadcast [58]
+                0.00    0.00       2/2           HPL_ptimer [68]
+                0.00    0.00       1/9           HPL_grid_info [61]
+                0.00    0.00       1/4           HPL_all_reduce [62]
+                0.00    0.00       1/1           HPL_barrier [70]
+                0.00    0.00       1/1           HPL_ptimer_boot [74]
+                0.00    0.00       1/1           HPL_pdtrsv [73]
+                0.00    0.00       1/1           HPL_ptimer_combine [75]
+                0.00    0.00       1/17          HPL_reduce [57]
+-----------------------------------------------
+                0.04    0.73       2/2           HPL_pdtest [3]
+[4]      2.3    0.04    0.73       2         HPL_pdmatgen [4]
+                0.16    0.54 41620560/41620560     HPL_rand [5]
+                0.02    0.01  354972/354972      HPL_jumpit [22]
+                0.00    0.00      14/14          HPL_xjumpm [34]
+                0.00    0.00       6/83942062     HPL_setran [6]
+                0.00    0.00       2/9           HPL_grid_info [61]
+-----------------------------------------------
+                0.16    0.54 41620560/41620560     HPL_pdmatgen [4]
+[5]      2.1    0.16    0.54 41620560         HPL_rand [5]
+                0.09    0.45 83232000/83942062     HPL_setran [6]
+-----------------------------------------------
+                0.00    0.00       6/83942062     HPL_pdmatgen [4]
+                0.00    0.00  710056/83942062     HPL_jumpit [22]
+                0.09    0.45 83232000/83942062     HPL_rand [5]
+[6]      1.6    0.09    0.46 83942062         HPL_setran [6]
+                0.30    0.00 83232000/84123104     HPL_lmul [7]
+                0.15    0.00 83232000/84036672     HPL_ladd [12]
+-----------------------------------------------
+                0.00    0.00  172888/84123104     HPL_xjumpm [34]
+                0.00    0.00  718216/84123104     HPL_jumpit [22]
+                0.30    0.00 83232000/84123104     HPL_setran [6]
+[7]      0.9    0.31    0.00 84123104         HPL_lmul [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      0.8    0.28    0.00                 HPL_dlaswp01T [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      0.8    0.26    0.00                 HPL_dlaswp06T [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     0.6    0.19    0.00                 dtrsm_kernel_RN [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]     0.5    0.16    0.00                 blas_thread_server [11]
+-----------------------------------------------
+                0.00    0.00   86456/84036672     HPL_xjumpm [34]
+                0.00    0.00  718216/84036672     HPL_jumpit [22]
+                0.15    0.00 83232000/84036672     HPL_setran [6]
+[12]     0.5    0.16    0.00 84036672         HPL_ladd [12]
+-----------------------------------------------
+                0.00    0.14       1/1           HPL_pdtest [3]
+[13]     0.4    0.00    0.14       1         HPL_pdgesv [13]
+                0.00    0.14       1/1           HPL_pdgesvK2 [14]
+-----------------------------------------------
+                0.00    0.14       1/1           HPL_pdgesv [13]
+[14]     0.4    0.00    0.14       1         HPL_pdgesvK2 [14]
+                0.00    0.11     237/237         HPL_pdupdateTT [17]
+                0.00    0.02      35/35          HPL_pdfact [24]
+                0.01    0.00     169/173         HPL_pdpanel_init [28]
+                0.00    0.00       2/2           HPL_pdpanel_new [35]
+                0.00    0.00  495102/526168      HPL_bcast_1rinM [37]
+                0.00    0.00  495102/526203      HPL_bcast [36]
+                0.00    0.00     203/203         HPL_bwait_1rinM [49]
+                0.00    0.00     203/203         HPL_bwait [48]
+                0.00    0.00     170/170         HPL_binit_1rinM [53]
+                0.00    0.00     170/170         HPL_binit [52]
+                0.00    0.00     169/175         HPL_pdpanel_free [51]
+                0.00    0.00      35/893         HPL_numrocI [42]
+                0.00    0.00       2/2           HPL_pdpanel_disp [67]
+                0.00    0.00       1/3           HPL_numroc [64]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.4    0.14    0.00                 dgemv_n [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[16]     0.4    0.13    0.00                 dgemm_otcopy [16]
+-----------------------------------------------
+                0.00    0.11     237/237         HPL_pdgesvK2 [14]
+[17]     0.3    0.00    0.11     237         HPL_pdupdateTT [17]
+                0.06    0.00   10128/10650       HPL_dlatcpy [19]
+                0.05    0.00     202/202         HPL_dlaswp10N [20]
+                0.00    0.00   28508/526203      HPL_bcast [36]
+                0.00    0.00   28473/526168      HPL_bcast_1rinM [37]
+                0.00    0.00     202/202         HPL_pdlaswp01T [50]
+                0.00    0.00       2/2           HPL_pdlaswp00T [66]
+-----------------------------------------------
+                0.08    0.00       5/5           HPL_pdtest [3]
+[18]     0.2    0.08    0.00       5         HPL_pdlange [18]
+                0.00    0.00       7/17          HPL_reduce [57]
+                0.00    0.00       5/9           HPL_grid_info [61]
+                0.00    0.00       5/14          HPL_broadcast [58]
+-----------------------------------------------
+                0.00    0.00     522/10650       HPL_pdrpanrlT [23]
+                0.06    0.00   10128/10650       HPL_pdupdateTT [17]
+[19]     0.2    0.06    0.00   10650         HPL_dlatcpy [19]
+-----------------------------------------------
+                0.05    0.00     202/202         HPL_pdupdateTT [17]
+[20]     0.2    0.05    0.00     202         HPL_dlaswp10N [20]
+-----------------------------------------------
+                                                 <spontaneous>
+[21]     0.1    0.03    0.00                 inner_thread [21]
+-----------------------------------------------
+                0.02    0.01  354972/354972      HPL_pdmatgen [4]
+[22]     0.1    0.02    0.01  354972         HPL_jumpit [22]
+                0.00    0.00  710056/83942062     HPL_setran [6]
+                0.00    0.00  718216/84123104     HPL_lmul [7]
+                0.00    0.00  718216/84036672     HPL_ladd [12]
+-----------------------------------------------
+                                1948             HPL_pdrpanrlT [23]
+                0.00    0.02     102/102         HPL_pdfact [24]
+[23]     0.1    0.00    0.02     102+1948    HPL_pdrpanrlT [23]
+                0.00    0.02    1008/1008        HPL_pdpanrlT [26]
+                0.00    0.00     522/10650       HPL_dlatcpy [19]
+                                1948             HPL_pdrpanrlT [23]
+-----------------------------------------------
+                0.00    0.02      35/35          HPL_pdgesvK2 [14]
+[24]     0.1    0.00    0.02      35         HPL_pdfact [24]
+                0.00    0.02     102/102         HPL_pdrpanrlT [23]
+-----------------------------------------------
+                0.02    0.00    4032/4032        HPL_pdpanrlT [26]
+[25]     0.1    0.02    0.00    4032         HPL_dlocswpT [25]
+-----------------------------------------------
+                0.00    0.02    1008/1008        HPL_pdrpanrlT [23]
+[26]     0.1    0.00    0.02    1008         HPL_pdpanrlT [26]
+                0.02    0.00    4032/4032        HPL_dlocswpT [25]
+                0.00    0.00    4032/4032        HPL_dlocmax [39]
+                0.00    0.00    4032/4032        HPL_pdmxswp [40]
+-----------------------------------------------
+                                                 <spontaneous>
+[27]     0.1    0.02    0.00                 dtrsm_ounucopy [27]
+-----------------------------------------------
+                0.00    0.00       4/173         HPL_pdpanel_new [35]
+                0.01    0.00     169/173         HPL_pdgesvK2 [14]
+[28]     0.0    0.01    0.00     173         HPL_pdpanel_init [28]
+                0.00    0.00     855/893         HPL_numrocI [42]
+                0.00    0.00     342/342         HPL_infog2l [46]
+-----------------------------------------------
+                                                 <spontaneous>
+[29]     0.0    0.01    0.00                 HPL_equil [29]
+                0.00    0.00    1773/1824        HPL_spreadT [41]
+-----------------------------------------------
+                                                 <spontaneous>
+[30]     0.0    0.01    0.00                 cblas_dscal [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[31]     0.0    0.01    0.00                 daxpy_kernel_8 [31]
+-----------------------------------------------
+                                                 <spontaneous>
+[32]     0.0    0.01    0.00                 dgemm_beta [32]
+-----------------------------------------------
+                                                 <spontaneous>
+[33]     0.0    0.01    0.00                 dscal_kernel_8 [33]
+-----------------------------------------------
+                0.00    0.00      14/14          HPL_pdmatgen [4]
+[34]     0.0    0.00    0.00      14         HPL_xjumpm [34]
+                0.00    0.00  172888/84123104     HPL_lmul [7]
+                0.00    0.00   86456/84036672     HPL_ladd [12]
+-----------------------------------------------
+                0.00    0.00       2/2           HPL_pdgesvK2 [14]
+[35]     0.0    0.00    0.00       2         HPL_pdpanel_new [35]
+                0.00    0.00       4/173         HPL_pdpanel_init [28]
+-----------------------------------------------
+                0.00    0.00     896/526203      HPL_rollT [138]
+                0.00    0.00    1697/526203      HPL_spreadT [41]
+                0.00    0.00   28508/526203      HPL_pdupdateTT [17]
+                0.00    0.00  495102/526203      HPL_pdgesvK2 [14]
+[36]     0.0    0.00    0.00  526203         HPL_bcast [36]
+-----------------------------------------------
+                0.00    0.00     896/526168      HPL_rollT [138]
+                0.00    0.00    1697/526168      HPL_spreadT [41]
+                0.00    0.00   28473/526168      HPL_pdupdateTT [17]
+                0.00    0.00  495102/526168      HPL_pdgesvK2 [14]
+[37]     0.0    0.00    0.00  526168         HPL_bcast_1rinM [37]
+-----------------------------------------------
+                0.00    0.00    8064/8064        HPL_pdmxswp [40]
+[38]     0.0    0.00    0.00    8064         HPL_sdrv [38]
+-----------------------------------------------
+                0.00    0.00    4032/4032        HPL_pdpanrlT [26]
+[39]     0.0    0.00    0.00    4032         HPL_dlocmax [39]
+-----------------------------------------------
+                0.00    0.00    4032/4032        HPL_pdpanrlT [26]
+[40]     0.0    0.00    0.00    4032         HPL_pdmxswp [40]
+                0.00    0.00    8064/8064        HPL_sdrv [38]
+-----------------------------------------------
+                0.00    0.00      51/1824        HPL_pdlaswp01T [50]
+                0.00    0.00    1773/1824        HPL_equil [29]
+[41]     0.0    0.00    0.00    1824         HPL_spreadT [41]
+                0.00    0.00    1697/526168      HPL_bcast_1rinM [37]
+                0.00    0.00    1697/526203      HPL_bcast [36]
+-----------------------------------------------
+                0.00    0.00       3/893         HPL_numroc [64]
+                0.00    0.00      35/893         HPL_pdgesvK2 [14]
+                0.00    0.00     855/893         HPL_pdpanel_init [28]
+[42]     0.0    0.00    0.00     893         HPL_numrocI [42]
+-----------------------------------------------
+                0.00    0.00      33/533         HPL_pdlaswp01T [50]
+                0.00    0.00     500/533         HPL_plindx1 [132]
+[43]     0.0    0.00    0.00     533         HPL_logsort [43]
+-----------------------------------------------
+                0.00    0.00      33/533         HPL_pdlaswp01T [50]
+                0.00    0.00     500/533         HPL_plindx1 [132]
+[44]     0.0    0.00    0.00     533         HPL_plindx10 [44]
+-----------------------------------------------
+                0.00    0.00     500/500         HPL_plindx1 [132]
+[45]     0.0    0.00    0.00     500         HPL_perm [45]
+-----------------------------------------------
+                0.00    0.00     342/342         HPL_pdpanel_init [28]
+[46]     0.0    0.00    0.00     342         HPL_infog2l [46]
+-----------------------------------------------
+                0.00    0.00     340/340         HPL_binit_1rinM [53]
+[47]     0.0    0.00    0.00     340         HPL_packL [47]
+-----------------------------------------------
+                0.00    0.00     203/203         HPL_pdgesvK2 [14]
+[48]     0.0    0.00    0.00     203         HPL_bwait [48]
+-----------------------------------------------
+                0.00    0.00     203/203         HPL_pdgesvK2 [14]
+[49]     0.0    0.00    0.00     203         HPL_bwait_1rinM [49]
+-----------------------------------------------
+                0.00    0.00     202/202         HPL_pdupdateTT [17]
+[50]     0.0    0.00    0.00     202         HPL_pdlaswp01T [50]
+                0.00    0.00     167/167         HPL_pipid [54]
+                0.00    0.00      51/1824        HPL_spreadT [41]
+                0.00    0.00      33/533         HPL_logsort [43]
+                0.00    0.00      33/533         HPL_plindx10 [44]
+-----------------------------------------------
+                0.00    0.00       6/175         HPL_pdpanel_disp [67]
+                0.00    0.00     169/175         HPL_pdgesvK2 [14]
+[51]     0.0    0.00    0.00     175         HPL_pdpanel_free [51]
+-----------------------------------------------
+                0.00    0.00     170/170         HPL_pdgesvK2 [14]
+[52]     0.0    0.00    0.00     170         HPL_binit [52]
+-----------------------------------------------
+                0.00    0.00     170/170         HPL_pdgesvK2 [14]
+[53]     0.0    0.00    0.00     170         HPL_binit_1rinM [53]
+                0.00    0.00     340/340         HPL_packL [47]
+-----------------------------------------------
+                0.00    0.00     167/167         HPL_pdlaswp01T [50]
+[54]     0.0    0.00    0.00     167         HPL_pipid [54]
+-----------------------------------------------
+                0.00    0.00      60/60          HPL_pdtrsv [73]
+[55]     0.0    0.00    0.00      60         HPL_recv [55]
+-----------------------------------------------
+                0.00    0.00      60/60          HPL_pdtrsv [73]
+[56]     0.0    0.00    0.00      60         HPL_send [56]
+-----------------------------------------------
+                0.00    0.00       1/17          HPL_pdtest [3]
+                0.00    0.00       7/17          HPL_pdlange [18]
+                0.00    0.00       9/17          HPL_all_reduce [62]
+[57]     0.0    0.00    0.00      17         HPL_reduce [57]
+                0.00    0.00      13/13          HPL_sum [59]
+                0.00    0.00      10/10          HPL_max [60]
+-----------------------------------------------
+                0.00    0.00       1/14          HPL_barrier [70]
+                0.00    0.00       1/14          HPL_pdlamch [72]
+                0.00    0.00       1/14          HPL_ptimer_combine [75]
+                0.00    0.00       2/14          HPL_pdtest [3]
+                0.00    0.00       4/14          HPL_pdinfo [115]
+                0.00    0.00       5/14          HPL_pdlange [18]
+[58]     0.0    0.00    0.00      14         HPL_broadcast [58]
+-----------------------------------------------
+                0.00    0.00      13/13          HPL_reduce [57]
+[59]     0.0    0.00    0.00      13         HPL_sum [59]
+-----------------------------------------------
+                0.00    0.00      10/10          HPL_reduce [57]
+[60]     0.0    0.00    0.00      10         HPL_max [60]
+-----------------------------------------------
+                0.00    0.00       1/9           HPL_pdtest [3]
+                0.00    0.00       1/9           HPL_pdtrsv [73]
+                0.00    0.00       2/9           HPL_pdmatgen [4]
+                0.00    0.00       5/9           HPL_pdlange [18]
+[61]     0.0    0.00    0.00       9         HPL_grid_info [61]
+-----------------------------------------------
+                0.00    0.00       1/4           HPL_pdinfo [115]
+                0.00    0.00       1/4           HPL_pdtest [3]
+                0.00    0.00       1/4           HPL_pdlamch [72]
+                0.00    0.00       1/4           HPL_ptimer_combine [75]
+[62]     0.0    0.00    0.00       4         HPL_all_reduce [62]
+                0.00    0.00       9/17          HPL_reduce [57]
+-----------------------------------------------
+                0.00    0.00       3/3           HPL_pdtest [3]
+[63]     0.0    0.00    0.00       3         HPL_indxg2p [63]
+-----------------------------------------------
+                0.00    0.00       1/3           HPL_pdgesvK2 [14]
+                0.00    0.00       2/3           HPL_pdtest [3]
+[64]     0.0    0.00    0.00       3         HPL_numroc [64]
+                0.00    0.00       3/893         HPL_numrocI [42]
+-----------------------------------------------
+                0.00    0.00       1/3           HPL_ptimer_combine [75]
+                0.00    0.00       2/3           HPL_ptimer [68]
+[65]     0.0    0.00    0.00       3         HPL_ptimer_walltime [65]
+-----------------------------------------------
+                0.00    0.00       2/2           HPL_pdupdateTT [17]
+[66]     0.0    0.00    0.00       2         HPL_pdlaswp00T [66]
+                0.00    0.00       1/1           HPL_dlaswp02N [71]
+-----------------------------------------------
+                0.00    0.00       2/2           HPL_pdgesvK2 [14]
+[67]     0.0    0.00    0.00       2         HPL_pdpanel_disp [67]
+                0.00    0.00       6/175         HPL_pdpanel_free [51]
+-----------------------------------------------
+                0.00    0.00       2/2           HPL_pdtest [3]
+[68]     0.0    0.00    0.00       2         HPL_ptimer [68]
+                0.00    0.00       2/3           HPL_ptimer_walltime [65]
+                0.00    0.00       2/2           HPL_ptimer_cputime [69]
+-----------------------------------------------
+                0.00    0.00       2/2           HPL_ptimer [68]
+[69]     0.0    0.00    0.00       2         HPL_ptimer_cputime [69]
+-----------------------------------------------
+                0.00    0.00       1/1           HPL_pdtest [3]
+[70]     0.0    0.00    0.00       1         HPL_barrier [70]
+                0.00    0.00       1/14          HPL_broadcast [58]
+-----------------------------------------------
+                0.00    0.00       1/1           HPL_pdlaswp00T [66]
+[71]     0.0    0.00    0.00       1         HPL_dlaswp02N [71]
+-----------------------------------------------
+                0.00    0.00       1/1           HPL_pdinfo [115]
+[72]     0.0    0.00    0.00       1         HPL_pdlamch [72]
+                0.00    0.00       1/14          HPL_broadcast [58]
+                0.00    0.00       1/4           HPL_all_reduce [62]
+-----------------------------------------------
+                0.00    0.00       1/1           HPL_pdtest [3]
+[73]     0.0    0.00    0.00       1         HPL_pdtrsv [73]
+                0.00    0.00      60/60          HPL_recv [55]
+                0.00    0.00      60/60          HPL_send [56]
+                0.00    0.00       1/9           HPL_grid_info [61]
+-----------------------------------------------
+                0.00    0.00       1/1           HPL_pdtest [3]
+[74]     0.0    0.00    0.00       1         HPL_ptimer_boot [74]
+-----------------------------------------------
+                0.00    0.00       1/1           HPL_pdtest [3]
+[75]     0.0    0.00    0.00       1         HPL_ptimer_combine [75]
+                0.00    0.00       1/14          HPL_broadcast [58]
+                0.00    0.00       1/4           HPL_all_reduce [62]
+                0.00    0.00       1/3           HPL_ptimer_walltime [65]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [62] HPL_all_reduce         [64] HPL_numroc             [75] HPL_ptimer_combine
+  [70] HPL_barrier            [42] HPL_numrocI            [69] HPL_ptimer_cputime
+  [36] HPL_bcast              [47] HPL_packL              [65] HPL_ptimer_walltime
+  [37] HPL_bcast_1rinM        [24] HPL_pdfact              [5] HPL_rand
+  [52] HPL_binit              [13] HPL_pdgesv             [55] HPL_recv
+  [53] HPL_binit_1rinM        [14] HPL_pdgesvK2           [57] HPL_reduce
+  [58] HPL_broadcast          [72] HPL_pdlamch            [38] HPL_sdrv
+  [48] HPL_bwait              [18] HPL_pdlange            [56] HPL_send
+  [49] HPL_bwait_1rinM        [66] HPL_pdlaswp00T          [6] HPL_setran
+   [8] HPL_dlaswp01T          [50] HPL_pdlaswp01T         [41] HPL_spreadT
+  [71] HPL_dlaswp02N           [4] HPL_pdmatgen           [59] HPL_sum
+   [9] HPL_dlaswp06T          [40] HPL_pdmxswp            [34] HPL_xjumpm
+  [20] HPL_dlaswp10N          [67] HPL_pdpanel_disp       [11] blas_thread_server
+  [19] HPL_dlatcpy            [51] HPL_pdpanel_free       [30] cblas_dscal
+  [39] HPL_dlocmax            [28] HPL_pdpanel_init       [31] daxpy_kernel_8
+  [25] HPL_dlocswpT           [35] HPL_pdpanel_new        [32] dgemm_beta
+  [29] HPL_equil              [26] HPL_pdpanrlT            [2] dgemm_itcopy
+  [61] HPL_grid_info          [23] HPL_pdrpanrlT           [1] dgemm_kernel
+  [63] HPL_indxg2p            [73] HPL_pdtrsv             [16] dgemm_otcopy
+  [46] HPL_infog2l            [17] HPL_pdupdateTT         [15] dgemv_n
+  [22] HPL_jumpit             [45] HPL_perm               [33] dscal_kernel_8
+  [12] HPL_ladd               [54] HPL_pipid              [10] dtrsm_kernel_RN
+   [7] HPL_lmul               [44] HPL_plindx10           [27] dtrsm_ounucopy
+  [43] HPL_logsort            [68] HPL_ptimer             [21] inner_thread
+  [60] HPL_max                [74] HPL_ptimer_boot
